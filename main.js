@@ -53,8 +53,30 @@ customElements.define('lotto-numbers', LottoNumbers);
 const generateButton = document.getElementById('generate');
 const lottoNumbersElement = document.querySelector('lotto-numbers');
 const historyList = document.getElementById('history-list');
+const themeToggle = document.getElementById('theme-toggle');
 
 const history = [];
+
+// Theme logic
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+}
+
+// Check for saved theme on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    // Default to light theme if no preference is saved
+    applyTheme('light');
+}
+
+themeToggle.addEventListener('click', () => {
+    let currentTheme = document.documentElement.getAttribute('data-theme');
+    let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
+});
 
 function generateNumbers() {
     const numbers = new Set();
