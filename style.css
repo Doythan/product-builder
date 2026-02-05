@@ -1,1 +1,55 @@
-/* Add styles here */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.lotto-numbers {
+    margin-bottom: 30px;
+}
+
+#generate {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#generate:hover {
+    background-color: #45a049;
+}
+
+.history {
+    margin-top: 30px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+#history-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
